@@ -44,7 +44,7 @@ class Server:
         List[List]: A list of rows corresponding to the page.
         """
         # Ensure page and page_size are positive integers
-        assert isinstance(page, int) and page > 0 
+        assert isinstance(page, int) and page > 0
         assert isinstance(page_size, int) and page_size > 0
 
         # Calculate the start and end index for the page
