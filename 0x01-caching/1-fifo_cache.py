@@ -23,8 +23,11 @@ class FIFOCache(BaseCaching):
 
         self.cache_data[key] = item
 
-        # if key not in self.cache_list:
-        self.cache_list.append(key)
+        if key not in self.cache_list:
+            self.cache_list.append(key)
+        else:
+            self.cache_list.remove(key)
+            self.cache_list.append(key)
 
     def get(self, key):
         """ function get retrieves item from the cache """
