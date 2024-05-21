@@ -20,6 +20,7 @@ class FIFOCache(BaseCaching):
                 first_item = self.cache_list.pop(0)
                 print("Discard: {}".format(first_item))
                 del self.cache_data[first_item]
+                del first_item
 
         self.cache_data[key] = item
 
