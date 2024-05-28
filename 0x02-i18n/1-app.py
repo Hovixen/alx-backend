@@ -6,7 +6,7 @@ from flask_babel import Babel
 app = Flask(__name__)
 
 
-class Config:
+class Config(object):
     """ config class for babel languages """
     LANGUAGES = ['en', 'fr']
     BABEL_DEFAULT_LANG = 'en'
@@ -18,7 +18,7 @@ babel = Babel(app)
 
 
 @app.route('/', strict_slashes=False)
-def index() -> None:
+def index() ->str:
     """ index function """
     title = "Welcome to Holberton"
     return render_template("0-index.html", title=title)
