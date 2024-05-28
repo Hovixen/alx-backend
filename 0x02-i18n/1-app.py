@@ -17,7 +17,7 @@ app.config.from_object(Config)
 babel = Babel(app)
 
 
-@app.route('/')
+@app.route('/', strict_slashes=False)
 def index() -> None:
     """ index function """
     title = "Welcome to Holberton"
