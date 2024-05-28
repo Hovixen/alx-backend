@@ -9,7 +9,7 @@ app = Flask(__name__)
 def index():
     """ index function """
     title = "Welcome to Holberton"
-    return render_template(index.html, title=title)
+    return render_template("0-index.html", title=title)
 
 
 if __name__ == '__main__':
