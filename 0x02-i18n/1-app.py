@@ -4,14 +4,21 @@ from flask import Flask, render_template
 from flask_babel import Babel
 
 app = Flask(__name__)
-app.config['BABEL_DEFAULT_LANG'] = 'en'
-app.config['BABEL_SUPPORTED_LANG'] = ['en', 'fr']
 
+
+class Config:
+    """ config class for babel languages """
+    LANGUAGES = ['en', 'fr']
+    BABEL_DEFAULT_LANG = 'en'
+    BABEL_DEFAULT_TZ = 'UTC'
+
+
+app.config.from_object(Config)
 babel = Babel(app)
 
 
 @app.route('/')
-def index():
+def index() -> None:
     """ index function """
     title = "Welcome to Holberton"
     return render_template("0-index.html", title=title)
